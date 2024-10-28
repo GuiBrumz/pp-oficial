@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="pt-br">
+<html l0ang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -12,19 +12,29 @@
 
 <body>
 
+    <!-- Ícone de menu hamburger -->
+    <div class="menu-icon" id="menuIcon" onclick="toggleSidebar()">☰</div>
+
+    <!-- Barra lateral -->
+    <aside class="sidebar" id="sidebar">
+        <nav>
+            <ul>
+                <li><a href="index.html">💬 Fórum</a></li>
+                <li><a href="informativo.html">ℹ️ Informações</a></li>
+                <li><a href="calendario.html">📅 Agenda</a></li>
+                <li><a href="login.html">🚪 Sair</a></li>
+                <li><a href="ajuda.html">❓ Ajuda</a></li>
+                <li><a href="configuracoes.html">⚙️ Configurações</a></li>
+            </ul>
+        </nav>
+    </aside>
+
     <header>
         <div class="header-content">
             <img src="logo.png" alt="Site Logo" class="logo">
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="./informativo.html">Informações</a></li>
-                    <li><a href="calendario.html">Agenda</a></li>
-                    <li><a href="login.html">Sair</a></li>
-                </ul>
-            </nav>
         </div>
     </header>
+
 
     <div class="container">
         <div class="calendario">

@@ -3,18 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bem-vindo à Plataforma</title>
+    <title>Fórum Criativo</title>
     <link rel="stylesheet" href="informativo.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
-    <header>
-        <div id="title">
-            <h1>Marketing</h1>
-            <h1>Criativo</h1>
-        </div>
 
-      
+    <!-- Ícone de menu hamburger -->
+    <div class="menu-icon" id="menuIcon" onclick="toggleSidebar()">☰</div>
+
+    <!-- Barra lateral -->
+    <aside class="sidebar" id="sidebar">
+        <nav>
+            <ul>
+                <li><a href="index.html">💬 Fórum</a></li>
+                <li><a href="informativo.html">ℹ️ Informações</a></li>
+                <li><a href="calendario.html">📅 Agenda</a></li>
+                <li><a href="login.html">🚪 Sair</a></li>
+                <li><a href="ajuda.html">❓ Ajuda</a></li>
+                <li><a href="configuracoes.html">⚙️ Configurações</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <header>
+        <div class="header-content">
+            <img src="logo.png" alt="Site Logo" class="logo">
+        </div>
     </header>
 
     <main class="main-content">

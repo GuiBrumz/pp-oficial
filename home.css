@@ -1,0 +1,173 @@
+/*Seleciona as configuraçoes de todo o texto */
+/* Reset de CSS para melhor consistência entre navegadores */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #e6f0f3; /* Cor de fundo suave */
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: url('desemprego-o-que-e-causas-tipos-e-consequencias-4.jpg') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    padding-top: 80px; /* Adiciona espaço para o header */
+    padding: 0;
+    margin: 0;
+    min-height: 100vh;
+}
+
+/* Ícone do menu (hamburger) */
+.menu-icon {
+    font-size: 24px; /* Tamanho menor do ícone */
+    padding: 15px; /* Reduzindo o espaçamento ao redor do ícone */
+    cursor: pointer;
+    background-color: #005f73;
+    color: white;
+    position: fixed;
+    top: 15px;
+    right: 15px; /* Alinhado à direita */
+    z-index: 1000;
+    transition: right 0.3s ease;
+}
+
+/* Sidebar oculta inicialmente (lado direito) */
+.sidebar {
+    display: flex; /* Usar flexbox */
+    flex-direction: column; /* Organiza os itens na coluna */
+    justify-content: space-between; /* Distribui o espaço entre os itens */
+    width: 250px;
+    background-color: #005f73;
+    position: fixed;
+    top: 0;
+    right: -250px; /* Fora da tela inicialmente */
+    height: 100vh;
+    padding: 20px 0; /* Adiciona espaço em cima e embaixo */
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease;
+    z-index: 999;
+}
+
+.sidebar nav {
+    flex-grow: 1; /* Permite que o nav cresça e ocupe o espaço disponível */
+}
+
+.sidebar nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0; /* Remove margens */
+}
+
+/* Estilo para os itens da lista */
+.sidebar nav ul li {
+    margin: 20px 0;
+}
+
+.sidebar nav ul li a {
+    color: #edf6f9;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    display: block;
+    padding: 15px 20px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar nav ul li a:hover {
+    background-color: #94d2bd;
+    color: #333;
+    border-radius: 5px;
+}
+
+/* Estilo para o header */
+header {
+    width: 100%;
+    background-color: #005f73;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.logo {
+    height: 60px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+    }
+
+    .menu-icon {
+        font-size: 24px;
+    }
+}
+
+/* Main content */
+.main-content {
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    max-width: 800px;
+}
+
+.intro-text {
+    background-color: rgba(0, 95, 115, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Centraliza o texto dentro da caixa */
+}
+
+.intro-text h1 {
+    color: #edf6f9;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.intro-text p {
+    color: #f1f1f1;
+    margin-bottom: 15px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.button-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.button {
+    text-decoration: none;
+    color: white;
+    background-color: #0077b6;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.button:hover {
+    background-color: #005f73;
+    transform: translateY(-3px);
+}
+
+.button:active {
+    transform: translateY(0);
+}
