@@ -128,3 +128,24 @@ function toggleSidebar() {
 function redirectToIndex() {
     window.location.href = "index.html";
 }
+
+function criaCardEmpresa(empresa){
+ 
+    // Percorre cada empresa retornada no resultado
+
+    const card = document.createElement('div');
+    card.className = 'empresa-card';
+    // Cria um novo elemento "div" para o card da empresa e define sua classe
+
+    const img = document.createElement('img');
+    img.src = `http://localhost:3003/uploads/${empresa.imagem}`;
+    // Cria um elemento de imagem e define a fonte para a imagem da empresa
+
+    const infoDiv = document.createElement('div');
+    infoDiv.className = 'info';
+    // Cria um "div" para as informações da empresa e define sua classe
+    
+    card.appendChild(img);
+                card.appendChild(infoDiv);
+                card.appendChild(btnContainer);
+}
