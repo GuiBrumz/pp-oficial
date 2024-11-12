@@ -1,7 +1,7 @@
 const { Router } = require('express');
 const router = Router();
 
-const { storeTask, updateTask, deleteTask, getTask } = require('../controller/taskController');
+const { storeTask } = require('../controller/taskController');
 
 /**
  * @swagger
@@ -19,5 +19,6 @@ const { storeTask, updateTask, deleteTask, getTask } = require('../controller/ta
  *                type: object
  */
  router.post('/store/task', storeTask);
+
 
 module.exports = router;

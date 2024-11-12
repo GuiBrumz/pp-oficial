@@ -3,7 +3,7 @@ let button = document.getElementById("handleSubmit");
 button.onclick = async function() {
     let title = document.getElementById("title").value;
     let description = document.getElementById("description").value;
-    let data = {title}
+    let data = {title, description}
  
     const response = await fetch('http://localhost:3000/api/store/task', {
         method: "POST",
@@ -72,17 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
             var p = document.createElement('p');
             p.textContent = postagem.title + ': ' + postagem.description;
 
-            var deleteButton = document.createElement('button');
-            deleteButton.classList.add('delete-button');
-            deleteButton.textContent = 'Delete';
-            deleteButton.addEventListener('click', function() {
-                postagensSalvas.splice(index, 1);
-                localStorage.setItem('postagensSalvas', JSON.stringify(postagensSalvas));
-                renderPostagens();
-            });
-
             messageItem.appendChild(p);
-            messageItem.appendChild(deleteButton);
             messagesDiv.appendChild(messageItem);
         });
     }
@@ -125,27 +115,9 @@ function toggleSidebar() {
     }
 }
 
+
+
 function redirectToIndex() {
     window.location.href = "index.html";
 }
 
-function criaCardEmpresa(empresa){
- 
-    // Percorre cada empresa retornada no resultado
-
-    const card = document.createElement('div');
-    card.className = 'empresa-card';
-    // Cria um novo elemento "div" para o card da empresa e define sua classe
-
-    const img = document.createElement('img');
-    img.src = `http://localhost:3003/uploads/${empresa.imagem}`;
-    // Cria um elemento de imagem e define a fonte para a imagem da empresa
-
-    const infoDiv = document.createElement('div');
-    infoDiv.className = 'info';
-    // Cria um "div" para as informações da empresa e define sua classe
-    
-    card.appendChild(img);
-                card.appendChild(infoDiv);
-                card.appendChild(btnContainer);
-}
