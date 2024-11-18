@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fórum Criativo</title>
+    <title>informativo</title>
     <link rel="stylesheet" href="../style/informativo.css">
 </head>
 <body>
@@ -16,11 +16,9 @@
         <nav>
             <ul>
                 <li><a href="../front/index.html">💬 Fórum</a></li>
-                <li><a href="../front/informativo.html">ℹ️ Informações</a></li>
+                <li><a href="../front/informativo.html">ℹ️ Informações e ajuda</a></li>
                 <li><a href="../front/calendario.html">📅 Agenda</a></li>
                 <li><a href="../front/login.html">🚪 Sair</a></li>
-                <li><a href="../front/ajuda.html">❓ Ajuda</a></li>
-                <li><a href="../front/configuracoes.html">⚙️ Configurações</a></li>
             </ul>
         </nav>
     </aside>
@@ -33,10 +31,20 @@
 
     <main class="main-content">
         <h1>Bem-vindo à Nossa Plataforma</h1>
-        <p>A proposta deste projeto é conectar desempregados a oportunidades de trabalho, ajudando a reduzir a taxa de desemprego no Brasil. Aqui, empresas podem anunciar vagas, e candidatos podem criar perfis profissionais detalhados.</p>
-        <p>Nossa missão é transformar a busca por emprego em uma experiência mais fácil e eficiente. Estamos aqui para ajudar você a encontrar sua próxima oportunidade!</p>
-        <img src="https://via.placeholder.com/800x400" alt="Imagem Inspiradora">
+        <p>Vivemos em tempos desafiadores, onde o desemprego atinge milhões de brasileiros, afetando diretamente a qualidade de vida e o bem-estar das famílias. Pensando nisso, criamos esta plataforma com o objetivo de conectar talentos a oportunidades de trabalho, promovendo uma transformação positiva na sociedade.</p>
+        <p>Aqui, empresas de diversos setores podem anunciar vagas com facilidade, enquanto candidatos têm a chance de criar perfis profissionais completos e atraentes, destacando suas competências e experiências. Nossa ferramenta é simples, acessível e pensada para atender às necessidades tanto de empregadores quanto de quem busca emprego.</p>
+        <p>Além disso, oferecemos funcionalidades como uma agenda integrada para organizar entrevistas e prazos importantes, e uma seção informativa com dicas valiosas para quem deseja melhorar suas chances no mercado de trabalho.</p>
+        <div class="logo-container">
+            <img src="../imagens/logo.png" alt="Logo da Plataforma">
+        </div>
+        <p>Estamos comprometidos em fazer a diferença, ajudando você a alcançar seus objetivos profissionais e construir um futuro mais promissor. Acreditamos que juntos podemos superar os desafios e criar um mercado de trabalho mais justo e inclusivo.</p>
     </main>
+    <div class="help-section">
+        <p class="help-text">Se quiser ajuda, clique no botão abaixo:</p>
+        <a href="https://api.whatsapp.com/send/?phone=5551998782544&text&type=phone_number&app_absent=0" target="_blank">
+            <button class="help-button">💬 Obter Ajuda</button>
+        </a>
+    </div>
 
     <aside class="sidebar">
         <h2><span>Menu</span></h2>
@@ -51,6 +59,9 @@
             </ul>
         </nav>
     </aside>
+
+    <!-- Botão para rolar para cima -->
+    <button class="scroll-to-top" onclick="scrollToTop()">↑</button>
 
     <script src="../front/informatico.js"></script>
 </body>

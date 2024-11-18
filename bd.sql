@@ -11,6 +11,8 @@ create table forum(
     foreign key(id_user) references users(id)
 );
 
+drop table forum;
+
 select*from forum;
 
 create table users(
@@ -23,5 +25,8 @@ create table users(
 );
 
 select*from users;
+
+drop table users;
+
 
 DROP DATABASE db_forum;

@@ -6,32 +6,40 @@
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
     <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     <link rel="stylesheet" href="../style/style.css">
-    <title>Fórum</title>
+    <title>Postagem</title>
 </head>
 <body>
-  <div class="container">
-    <div class="response-group">
-      <header>
-        <h2>
-          <a href="/ProjetoDePP/index.html" class="home-link"><strong>Home</strong></a><i class="fa fa-angle-right"></i>Fórum
-        </h2>
-      </header>
-      </div>
-      <div class="response">
-        <div class="response__number">
-          1
+
+     <!-- Ícone de menu hamburger -->
+    <div class="menu-icon" id="menuIcon" onclick="toggleSidebar()">☰</div>
+
+    <!-- Barra lateral -->
+    <aside class="sidebar" id="sidebar">
+        <nav>
+            <ul>
+                <li><a href="../front/index.html">💬 Fórum</a></li>
+                <li><a href="../front/informativo.html">ℹ️ Informações e ajuda</a></li>
+                <li><a href="../front/calendario.html">📅 Agenda</a></li>
+                <li><a href="../front/login.html">🚪 Sair</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <header>
+        <div class="header-content">
+            <img src="../imagens/logo.png" alt="Site Logo" class="logo">
         </div>
-        <h1 class="response__title">
-          Dicas para superar a dependência em jogos eletrônicos
-        </h1>
+    </header>
+
+  <div class="container">
+      <div class="response">
         <div class="post-group">
           <p class="postagem">Faça sua postagem aqui!</p>
           <div class="comment-form">
-            <div class="comment-form__avatar"></div>
             <input type="text" id="title" name="title">
             <div class="comment-form__actions">
               <div class="button button--confirm" id="handleSubmit" button onclick="mostarCaixa">
-                Comment
+                ↪︎
               </div>
             </div>
           </div>
@@ -40,6 +48,7 @@
           </div>
         </div>
 
-        <script src="../front/scripts.js"></script>
+        <script src="../front/scripts.js" defer></script>
+
 </body>
 </html>
