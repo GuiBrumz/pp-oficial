@@ -1,115 +1,39 @@
-let btn = document.querySelector('#verSenha')
- 
-let nome = document.querySelector('#nome')
-let labelNome = document.querySelector('#labelNome')
-let validNome = false
- 
-let email = document.querySelector('#email')
-let labelEmail = document.querySelector('#labelEmail')
-let validEmail = false
- 
-let senha = document.querySelector('#senha')
-let labelSenha = document.querySelector('#labelSenha')
-let validSenha = false
- 
-let msgError = document.querySelector('#msgError')
-let msgSuccess = document.querySelector('#msgSuccess')
- 
-// Valida o nome
-nome.addEventListener('keyup', () => {
-  if(nome.value.length <= 2){
-    labelNome.setAttribute('style', 'color: red')
-    labelNome.innerHTML = 'Nome *Insira no mínimo 3 caracteres'
-    nome.setAttribute('style', 'border-color: red')
-    validNome = false
+let btn = document.querySelector('.fa-eye'); // Seleciona o elemento com a classe 'fa-eye', usado para mostrar/ocultar a senha.
+
+btn.addEventListener('click', () => { // Adiciona um evento de clique ao ícone selecionado.
+  let inputSenha = document.querySelector('#senha'); // Seleciona o campo de entrada da senha pelo ID 'senha'.
+  
+  if (inputSenha.getAttribute('type') == 'password') { // Verifica se o tipo do campo de senha é 'password' (senha oculta).
+    inputSenha.setAttribute('type', 'text'); // Se for 'password', muda para 'text' (senha visível).
   } else {
-    labelNome.setAttribute('style', 'color: green')
-    labelNome.innerHTML = 'Nome'
-    nome.setAttribute('style', 'border-color: green')
-    validNome = true
+    inputSenha.setAttribute('type', 'password'); // Se for 'text', muda de volta para 'password' (senha oculta).
   }
-})
- 
-// Valida o e-mail
-email.addEventListener('keyup', () => {
-  if(email.value.length <= 4){
-    labelEmail.setAttribute('style', 'color: red')
-    labelEmail.innerHTML = 'Email *Insira no mínimo 5 caracteres'
-    email.setAttribute('style', 'border-color: red')
-    validEmail = false
+});
+
+async function entrar() { // Define uma função assíncrona chamada 'entrar' para lidar com o processo de login.
+  let email = document.querySelector('#email').value; // Obtém o valor do campo de entrada de email.
+  let senha = document.querySelector('#senha').value; // Obtém o valor do campo de entrada de senha.
+  let data = { email, senha }; // Cria um objeto contendo o email e a senha.
+
+  const response = await fetch('http://localhost:3000/api/login', { // Envia uma requisição POST para a API de login.
+    method: "POST",
+    headers: { "Content-type": "application/json" },
+    body: JSON.stringify(data)
+  });
+
+  let content = await response.json(); // Converte a resposta da API em um objeto JSON.
+  console.log(content.data);
+
+  if (content.success) { // Verifica se o login foi bem-sucedido (baseado na resposta da API).
+    localStorage.setItem('token', content.token); // Se o login for bem-sucedido, armazena o token recebido no localStorage.
+    let userData = JSON.parse(content.data)[0]; // Acessa o primeiro item do array e converte para objeto JSON
+    localStorage.setItem('userdata', JSON.stringify(userData));// Armazena o objeto 'content' como string JSON no localStorage.
+    console.log(userData);
+    alert('Login realizado com sucesso');
+    window.location.href = 'index.html'; // Redireciona o usuário para a página principal.
   } else {
-    labelEmail.setAttribute('style', 'color: green')
-    labelEmail.innerHTML = 'Email'
-    email.setAttribute('style', 'border-color: green')
-    validEmail = true
-  }
-})
- 
-// Valida a senha
-senha.addEventListener('keyup', () => {
-  if(senha.value.length <= 5){
-    labelSenha.setAttribute('style', 'color: red')
-    labelSenha.innerHTML = 'Senha *Insira no mínimo 6 caracteres'
-    senha.setAttribute('style', 'border-color: red')
-    validSenha = false
-  } else {
-    labelSenha.setAttribute('style', 'color: green')
-    labelSenha.innerHTML = 'Senha'
-    senha.setAttribute('style', 'border-color: green')
-    validSenha = true
-  }
-})
- 
-// Função de cadastro
-async function cadastrar() {
-  if(validNome && validEmail && validSenha){
-    let listaUser = JSON.parse(localStorage.getItem('listaUser') || '[]')
-   
-    listaUser.push({
-      nomeCad: nome.value,
-      emailCad: email.value,
-      senhaCad: senha.value
-    })
-   
-    localStorage.setItem('listaUser', JSON.stringify(listaUser))
-   
-    // Envia os dados ao servidor
-    let data = {nome: nome.value, email: email.value, senha: senha.value}
-    const response = await fetch('http://localhost:3000/api/user/create', {
-      method: "POST",
-      headers: {"Content-type": "application/json;charset=UTF-8"},
-      body: JSON.stringify(data)
-    });
- 
-    let content = await response.json();
-   
-    if (content.success){
-      alert('Cadastro realizado com sucesso')
-      window.location.href = 'cadastro.html'; // Redireciona para a página de login
-    } else {
-      alert('Erro ao cadastrar')
-    }
-   
-    msgSuccess.setAttribute('style', 'display: block')
-    msgSuccess.innerHTML = '<strong>Cadastrando email...</strong>'
-    msgError.setAttribute('style', 'display: none')
-    msgError.innerHTML = ''
-  } else {
-    msgError.setAttribute('style', 'display: block')
-    msgError.innerHTML = '<strong>Preencha todos os campos corretamente antes de cadastrar</strong>'
-    msgSuccess.innerHTML = ''
-    msgSuccess.setAttribute('style', 'display: none')
+    alert('Falha no login'); // Se o login falhar, exibe um alerta informando o erro.
   }
 }
- 
-document.getElementById('btnConfirm').addEventListener('click', cadastrar)
- 
-btn.addEventListener('click', () => {
-  let inputSenha = document.querySelector('#senha')
- 
-  if(inputSenha.getAttribute('type') == 'password'){
-    inputSenha.setAttribute('type', 'text')
-  } else {
-    inputSenha.setAttribute('type', 'password')
-  }
-})
+
+document.getElementById('btnConfirm').addEventListener('click', entrar); // Adiciona um evento de clique ao botão de confirmação, que chama a função 'entrar' ao ser clicado.

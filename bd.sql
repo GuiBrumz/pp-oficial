@@ -1,20 +1,17 @@
-create database db_tasks;
+create database db_forum;
 
-use db_tasks;
+use db_forum;
 
-create table tasks(
+create table forum(
 	id INT auto_increment primary key,
     title VARCHAR(255) not null,
-    description VARCHAR(255) NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    description text,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    id_user int,
+    foreign key(id_user) references users(id)
 );
 
-select*from tasks;
-
-drop table tasks;
-
-DELETE from tasks
-where id > 0;
+select*from forum;
 
 create table users(
 	id int not null auto_increment primary key,
@@ -24,5 +21,7 @@ create table users(
     created_at timestamp default current_timestamp,
     updated_at timestamp default current_timestamp
 );
- 
-select * from users;
+
+select*from users;
+
+DROP DATABASE db_forum;

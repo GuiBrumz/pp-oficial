@@ -1,49 +1,49 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
-    rel="stylesheet"
-    href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="../style/cadastro.css">
-    <title>Sign-In</title>
-</head>
-<body>
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="../style/cadastro.css" />
+    <title>Singup</title>
+  </head>
+  <body>
     <div class="container">
-        <div class="card">
-          <h1>Entrar</h1>
- 
-          <div id="msgError"></div>
- 
-          <div class="label-float">
-            <input type="text" id="email" paceholder="" required />
-            <label id="userLabel" for="email">Email</label>
-          </div>
- 
-          <div class="label-float">
-            <input type="password" id="senha" paceholder="" required />
-            <label id="senhaLabel" for="senha">Senha</label>
-            <i class="fa fa-eye" aria-hidden="true"></i>
-          </div>
- 
-          <div class="justify-center">
-            <button onclick="entrar()">Entrar</button>
-          </div>
- 
-          <div class="justify-center">
-            <hr />
-          </div>
- 
-          <p>
-            Não tem uma conta?
-            <a href="../imagens/logo.png">
-              Cadastre-se
-            </a>
-          </p>
+      <div class="card">
+        <h1>Cadastrar</h1>
+
+        <div id="msgError"></div>
+        <div id="msgSuccess"></div>
+
+        <div class="label-float">
+          <input type="text" id="nome" placeholder=" " required />
+          <label id="labelNome" for="nome">Nome</label>
         </div>
+
+        <div class="label-float">
+          <input type="text" id="email" placeholder=" " required/>
+          <label id="labelEmail" for="email">Email</label>
+        </div>
+
+        <div class="label-float">
+          <input type="password" id="senha" placeholder=" " required />
+          <label id="labelSenha" for="senha">Senha</label>
+          <i id="verSenha" class="fa fa-eye" aria-hidden="true"></i>
+        </div>
+
+        <div class="justify-center">
+          <button id="btnConfirm" onclick="cadastrar()">Cadastrar</button>
+        </div>
+        <p class="login-link">
+          <a href="signin.html">Já possui uma conta?</a>
+        </p>
       </div>
- 
-      <script src="../front/cadastro.js"></script>
-</body>
+    </div>
+
+    <script src="cadastro.js"></script>
+  </body>
 </html>

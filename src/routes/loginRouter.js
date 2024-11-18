@@ -2,12 +2,13 @@ const express = require('express');
 const router = express.Router();
  
 const { login } = require("../controller/loginController")
- 
+
+
 /**
  * @swagger
  * /login:
  *  post:
- *    summary: Realiza login de usúario.
+ *    summary: Efetua o login do usuário
  *    responses:
  *      200:
  *        description: Sucesso!

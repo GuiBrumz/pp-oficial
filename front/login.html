@@ -1,47 +1,51 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <link rel="stylesheet" href="../style/login.css" />
-    <title>Signup</title>
-  </head>
-  <body>
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../style/login.css">
+    <title>Sign-In</title>
+</head>
+<body>
     <div class="container">
-      <div class="card">
-        <h1>Cadastrar</h1>
- 
-        <div id="msgError"></div>
-        <div id="msgSuccess"></div>
- 
-        <div class="input-box">
-          <input type="text" id="nome" placeholder=" " required />
-          <label id="labelNome" for="nome">Nome</label>
+        <div class="card">
+          <h1>Entrar</h1>
+  
+          <div id="msgError"></div>
+  
+          <div class="label-float">
+            <input type="text" id="email" placeholder="" required />
+            <label id="userLabel" for="email">Email</label>
+          </div>
+  
+          <div class="label-float">
+            <input type="password" id="senha" placeholder="" required />
+            <label id="senhaLabel" for="senha">Senha</label>
+            <div class="eye-container">
+              <i class="fa fa-eye" aria-hidden="true"></i>
+            </div>
+          </div>
+  
+          <div class="button">
+            <button onclick="entrar()">Entrar</button>
+          </div>
+  
+          <div class="justify-center">
+            <hr />
+          </div>
+  
+          <p>
+            Não tem uma conta?
+            <a href="signup.html">
+              Cadastre-se
+            </a>
+          </p>
         </div>
- 
-        <div class="input-box">
-          <input type="text" id="email" placeholder=" " required />
-          <label id="labelEmail" for="email">Email</label>
-        </div>
- 
-        <div class="input-box">
-          <input type="password" id="senha" placeholder=" " required />
-          <label id="labelSenha" for="senha">Senha</label>
-          <i id="verSenha" class="fa fa-eye" aria-hidden="true"></i>
-        </div>
-
-        <div class="justify-center">
-          <button id="btnConfirm" onclick="cadastrar()">Cadastrar</button>
-        </div>
-
       </div>
-    </div>
-
-    <script src="../front/login.js"></script>
-  </body>
+  
+      <script src="login.js"></script>
+</body>
 </html>
